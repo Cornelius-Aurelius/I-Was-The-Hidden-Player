@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cornelius Aurelius: I Was the Hidden Player</title>
+  <meta name="description" content="The personal story behind the Colour Blindness in Football mission by Cornelius Aurelius." />
+
+  <style>
+    :root {
+      --bg: #06100c;
+      --text: #f5fff8;
+      --muted: #bdd6c8;
+      --soft: #e6fff1;
+      --green: #38e07b;
+      --lime: #c8ff5a;
+      --gold: #ffd166;
+      --border: rgba(255, 255, 255, 0.16);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      --radius: 26px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 224, 123, 0.22), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 209, 102, 0.14), transparent 35%),
+        radial-gradient(circle at 50% 20%, rgba(131, 197, 255, 0.08), transparent 38%),
+        linear-gradient(145deg, var(--bg), #020604 72%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 16, 12, 0.86);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 1000;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #06110c;
+      background: linear-gradient(135deg, var(--green), var(--lime));
+      box-shadow: 0 14px 34px rgba(56, 224, 123, 0.25);
+      font-weight: 1000;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 9px 12px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .hero {
+      padding: 78px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card,
+    .article,
+    .support-card,
+    .link-card,
+    .mission-strip {
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      border-radius: calc(var(--radius) + 8px);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045)),
+        linear-gradient(135deg, rgba(56, 224, 123, 0.14), rgba(255, 209, 102, 0.08));
+      padding: clamp(28px, 5vw, 58px);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(200, 255, 90, 0.28);
+      background: rgba(200, 255, 90, 0.09);
+      color: var(--lime);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5.9rem);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-sub {
+      margin: 24px 0 0;
+      color: var(--soft);
+      font-size: clamp(1.08rem, 2.5vw, 1.36rem);
+      max-width: 800px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 950;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green), var(--lime));
+      color: #06110c;
+      box-shadow: 0 14px 35px rgba(56, 224, 123, 0.23);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .side-card {
+      border-radius: calc(var(--radius) + 8px);
+      background: rgba(255, 255, 255, 0.065);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .quote {
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      font-weight: 1000;
+      margin: 0;
+    }
+
+    .quote span {
+      color: var(--lime);
+    }
+
+    .mini-stats {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-stat {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .mini-stat b {
+      display: block;
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .mini-stat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    .section-title {
+      max-width: 880px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.6rem);
+      line-height: 1;
+      letter-spacing: -0.065em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 16px 0 0;
+      max-width: 800px;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .link-card {
+      min-height: 190px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.07);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.105);
+      border-color: rgba(200, 255, 90, 0.38);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border);
+    }
+
+    .link-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.22rem;
+      letter-spacing: -0.03em;
+    }
+
+    .link-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .arrow {
+      color: var(--lime);
+      font-weight: 950;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .story-panel {
+      position: sticky;
+      top: 96px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(145deg, rgba(56, 224, 123, 0.14), rgba(255, 255, 255, 0.055));
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .number {
+      font-size: clamp(4.4rem, 10vw, 7rem);
+      line-height: 0.85;
+      font-weight: 1000;
+      letter-spacing: -0.08em;
+      color: var(--lime);
+      margin-bottom: 18px;
+    }
+
+    .story-panel p {
+      margin: 0;
+      color: var(--soft);
+      font-size: 1.08rem;
+    }
+
+    .article {
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.066);
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    .article p {
+      margin: 0 0 18px;
+      color: var(--soft);
+      font-size: 1.06rem;
+    }
+
+    .article p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article strong {
+      color: #ffffff;
+    }
+
+    .highlight-box {
+      border-radius: 22px;
+      border: 1px solid rgba(200, 255, 90, 0.26);
+      background:
+        linear-gradient(135deg, rgba(200, 255, 90, 0.13), rgba(56, 224, 123, 0.07)),
+        rgba(255, 255, 255, 0.055);
+      padding: 22px;
+      margin: 24px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: #f7fff9;
+      font-weight: 850;
+      font-size: 1.08rem;
+    }
+
+    .pain-list,
+    .relief-grid,
+    .truth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .pain-item,
+    .relief-card,
+    .truth-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .pain-item {
+      font-weight: 850;
+      color: #ffffff;
+    }
+
+    .relief-card h3,
+    .truth-card h3 {
+      margin: 0 0 8px;
+      letter-spacing: -0.03em;
+      font-size: 1.18rem;
+    }
+
+    .relief-card p,
+    .truth-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .mission-strip {
+      border-radius: calc(var(--radius) + 6px);
+      border-color: rgba(200, 255, 90, 0.25);
+      background:
+        linear-gradient(135deg, rgba(200, 255, 90, 0.16), rgba(56, 224, 123, 0.08)),
+        rgba(255, 255, 255, 0.065);
+      padding: clamp(26px, 5vw, 46px);
+      text-align: center;
+    }
+
+    .mission-strip h2 {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .mission-strip p {
+      max-width: 860px;
+      margin: 18px auto 0;
+      color: var(--soft);
+      font-size: 1.1rem;
+    }
+
+    .support-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .support-card {
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.07);
+      padding: 26px;
+    }
+
+    .support-card.featured {
+      background:
+        linear-gradient(145deg, rgba(255, 209, 102, 0.15), rgba(255, 255, 255, 0.065));
+      border-color: rgba(255, 209, 102, 0.28);
+    }
+
+    .support-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.55rem;
+      letter-spacing: -0.045em;
+    }
+
+    .support-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer {
+      padding: 42px 0 60px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 44px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer a {
+      color: var(--lime);
+      font-weight: 850;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .story,
+      .support-box {
+        grid-template-columns: 1fr;
+      }
+
+      .story-panel {
+        position: static;
+      }
+
+      .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 22px, var(--max));
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-card,
+      .side-card,
+      .article,
+      .support-card {
+        border-radius: 22px;
+      }
+
+      .link-grid,
+      .pain-list,
+      .relief-grid,
+      .truth-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .link-card {
+        min-height: auto;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .topbar-inner {
+        min-height: 64px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="https://corneliusaurelius.com/" aria-label="Cornelius Aurelius main website">
+        <span class="brand-mark">CA</span>
+        <span>Cornelius Aurelius</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">My Story</a>
+        <a href="#mission">The Mission</a>
+        <a href="#explore">Explore</a>
+        <a href="#support">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-card">
+          <div class="kicker">Cornelius Aurelius: I Was the Hidden Player</div>
+          <h1>The story behind the mission.</h1>
+
+          <p class="hero-sub">
+            I spent years trying to prove myself in a game I could not always see clearly. I found out I was colour blind late in my football journey — and suddenly years of confusion, frustration, confidence damage and missed opportunities started to make sense.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#about">Read My Story</a>
+            <a class="btn btn-secondary" href="#mission">Why This Mission Exists</a>
+          </div>
+        </div>
+
+        <aside class="side-card" aria-label="Mission quote">
+          <p class="quote">
+            Being colour blind is not the end of the world. <span>But being misunderstood can damage a child.</span>
+          </p>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <b>The hidden player may stay hidden</b>
+              <p>Some players do not say they are colour blind because they are scared of being judged, embarrassed or treated as less capable.</p>
+            </div>
+
+            <div class="mini-stat">
+              <b>The message is simple</b>
+              <p>Make the game visible. Then judge the football.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="explore">
+      <div class="wrap">
+        <div class="section-title">
+          <p class="eyebrow">Explore the mission</p>
+          <h2>Everything connects back to one purpose: helping the hidden player be understood earlier.</h2>
+          <p class="lead">
+            The mission has grown into a book, sponsor page, football games, an AI guide and support resources for players, parents, coaches and clubs.
+          </p>
+        </div>
+
+        <div class="link-grid">
+          <a class="link-card" href="https://cornelius-aurelius.github.io/Sponsor-the-Hidden-Player/#leaderboard" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🏆</div>
+            <div>
+              <h3>Sponsors</h3>
+              <p>Sponsor the hidden player and help fund free books for players, parents, coaches and clubs.</p>
+            </div>
+            <span class="arrow">Open sponsor wall →</span>
+          </a>
+
+          <a class="link-card" href="https://cornelius-aurelius.github.io/COLOUR-BLINDNESS-GAMING-HUB/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🎮</div>
+            <div>
+              <h3>Football Games</h3>
+              <p>Colour-blind football games designed to train awareness, kit recognition and better decision-making.</p>
+            </div>
+            <span class="arrow">Play games →</span>
+          </a>
+
+          <a class="link-card" href="https://chatgpt.com/g/g-69f6bfcd04508191b79371d561856695-colour-blindness-in-football" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🤖</div>
+            <div>
+              <h3>Football GPT</h3>
+              <p>An AI companion for learning about colour blindness in football and finding practical support.</p>
+            </div>
+            <span class="arrow">Open GPT →</span>
+          </a>
+
+          <a class="link-card" href="https://cornelius-aurelius.github.io/COLOUR-BLINDNESS-IN-FOOTBALL/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">📘</div>
+            <div>
+              <h3>Ebook</h3>
+              <p>Read Colour Blindness in Football online and understand the hidden struggle in the game.</p>
+            </div>
+            <span class="arrow">Read ebook →</span>
+          </a>
+
+          <a class="link-card" href="#about">
+            <div class="icon">👤</div>
+            <div>
+              <h3>My Story</h3>
+              <p>The pain, regret, relief, masking, adapting and reason behind the mission.</p>
+            </div>
+            <span class="arrow">Read story →</span>
+          </a>
+
+          <a class="link-card" href="https://buy.stripe.com/eVqcMY98h5wo6logZOejK00" target="_blank" rel="noopener noreferrer">
+            <div class="icon">☕</div>
+            <div>
+              <h3>Support My Work</h3>
+              <p>Send a personal tip to support Cornelius and help him keep building useful projects that help others.</p>
+            </div>
+            <span class="arrow">Send a tip →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap story">
+        <aside class="story-panel">
+          <div class="number">12</div>
+          <p>
+            This is not about making excuses. This is about making sure the next child does not spend years hiding, adapting alone, or blaming themselves for a problem nobody helped them name.
+          </p>
+        </aside>
+
+        <article class="article">
+          <p>
+            Hi, you can call me <strong>Cornelius</strong>.
+          </p>
+
+          <p>
+            I am colour blind.
+          </p>
+
+          <p>
+            But I want to say something important from the start.
+          </p>
+
+          <div class="highlight-box">
+            <p>
+              Being colour blind is not the end of the world. It does not mean a child cannot play football. It does not mean they are broken. It does not mean they have no future in the game.
+            </p>
+          </div>
+
+          <p>
+            The real problem is not colour blindness by itself. The real problem is not knowing. Not being taught. Not being understood. Not being given the tools to adapt.
+          </p>
+
+          <p>
+            Up until now, I have rarely told people I am colour blind. Not because I was ashamed of who I am, but because I learned how quickly people can judge you once they know.
+          </p>
+
+          <p>
+            Sometimes the look changes. The tone changes. People start seeing the limitation before they see the person. It can become, “He cannot do that because he is colour blind,” or “That will be too difficult for him,” before anyone has even asked how I actually think, adapt or solve the problem.
+          </p>
+
+          <p>
+            But the truth is, I had often already found other ways to get to the right answer. I had built my own routes. My own checks. My own patterns. My own ways of understanding things that other people did not even realise were possible.
+          </p>
+
+          <div class="truth-grid">
+            <div class="truth-card">
+              <h3>I learned to adapt quietly</h3>
+              <p>I often found ways around colour confusion without explaining what I was doing or why I was doing it.</p>
+            </div>
+
+            <div class="truth-card">
+              <h3>I learned to hide it well</h3>
+              <p>People did not always notice because I became good at making sure they had no reason to second-guess what I could see.</p>
+            </div>
+          </div>
+
+          <p>
+            That is one of the reasons I know how easy colour blindness is to miss.
+          </p>
+
+          <p>
+            I know because I was able to make people not notice mine.
+          </p>
+
+          <p>
+            And that matters. Because when a player hides colour blindness well, adults may assume there is no problem. Coaches may think the player is just inconsistent. Parents may think the child is nervous. Teachers may think the child is careless. Clubs may think the player is not quick enough.
+          </p>
+
+          <p>
+            But sometimes the player is not failing to think. They are thinking too much. They are checking, comparing, guessing, masking and adapting in silence.
+          </p>
+
+          <p>
+            The way people react when someone says they are colour blind can become the same reason that person decides not to say it again.
+          </p>
+
+          <p>
+            If a child feels embarrassed, judged, laughed at, doubted or treated like they are less capable, they may keep it to themselves. They may hide it. They may pretend everything is fine. They may keep struggling quietly because silence feels safer than being labelled.
+          </p>
+
+          <p>
+            That is why this mission matters to me.
+          </p>
+
+          <p>
+            I dreamed of becoming a professional footballer. I trained, played, hoped, sacrificed and believed. Like many young players, I thought that if I worked hard enough, wanted it badly enough and kept going long enough, the dream would still be possible.
+          </p>
+
+          <p>
+            But I found out I was colour blind late in my football journey.
+          </p>
+
+          <p>
+            By then, years had already gone.
+          </p>
+
+          <p>
+            When I found out, part of me felt relief. Suddenly, some of the confusion started to make sense. The mistakes, the hesitation, the moments where football seemed to move too fast, the times I could not explain why I had made the wrong decision — it finally had a name.
+          </p>
+
+          <div class="relief-grid">
+            <div class="relief-card">
+              <h3>There was relief</h3>
+              <p>Finding out I was colour blind helped me understand that I was not stupid, lazy or careless. There was a reason some parts of the game felt harder.</p>
+            </div>
+
+            <div class="relief-card">
+              <h3>Then came a new problem</h3>
+              <p>Once I knew colour was confusing me, I started noticing it everywhere. That awareness became worry, stress and anxiety during football.</p>
+            </div>
+          </div>
+
+          <p>
+            That is one of the hardest parts people do not always understand. Finding out helped, but it also created a new battle. I became more aware of the colours that were confusing me. Kits. Bibs. Cones. Goalkeeper shirts. Referee shirts. Shadows. Mud. Light. Dark. Teammates. Opponents.
+          </p>
+
+          <p>
+            Instead of just playing, I started checking. Instead of moving freely, I started questioning. Instead of focusing completely on the game, part of my mind was worrying about colour.
+          </p>
+
+          <p>
+            And football demands complete focus. You cannot perform at your best when your brain is busy worrying, stressing and second-guessing what should be automatic.
+          </p>
+
+          <div class="pain-list" aria-label="Pain points">
+            <div class="pain-item">The confidence damage</div>
+            <div class="pain-item">The low self-esteem</div>
+            <div class="pain-item">The frustration</div>
+            <div class="pain-item">The confusion</div>
+            <div class="pain-item">The substitutions</div>
+            <div class="pain-item">The missed chances</div>
+            <div class="pain-item">The wasted time</div>
+            <div class="pain-item">The regret of knowing late</div>
+          </div>
+
+          <p>
+            When I found out, I also felt alone. Isolated. Like I had discovered the problem, but still had nobody to teach me what to do with it.
+          </p>
+
+          <p>
+            I could not find a football-specific guide that explained how to perform better under colour confusion. I could not find the education I needed. I did not know where to find adults, coaches, school teachers or football people who understood the problem deeply enough to teach me how to adapt.
+          </p>
+
+          <p>
+            I needed to learn how to improve my awareness. I needed to learn how to stop panicking over colours. I needed to build better habits for the pitch. But at the time, I did not know where to turn.
+          </p>
+
+          <p>
+            So I kept doing what everyone else was doing. Same drills. Same cones. Same bibs. Same colour-coded coaching. Same expectations. Same pressure.
+          </p>
+
+          <p>
+            But the worst part is this:
+          </p>
+
+          <p>
+            <strong>What was making other players better may have been making me worse — and I did not even know.</strong>
+          </p>
+
+          <p>
+            If a drill teaches other players to react quickly to colour, but colour is the exact thing confusing me, then I am not learning the same lesson. I am learning hesitation. I am learning doubt. I am learning panic. I am learning to second-guess myself.
+          </p>
+
+          <p>
+            That is why awareness matters. Not so the player can make excuses, but so the player can adapt properly.
+          </p>
+
+          <p>
+            And one of the hardest parts is this:
+          </p>
+
+          <p>
+            <strong>My mother paid for everything.</strong>
+          </p>
+
+          <p>
+            She worked non-stop, often with little earnings, trying to give me every opportunity she could. Football was not free. Trials were not free. Travel was not free. Boots, training, kit, food, transport, time off work — none of it was free.
+          </p>
+
+          <p>
+            She carried the cost because she believed in me.
+          </p>
+
+          <p>
+            Looking back, that hurts. Because I now understand that I may have unknowingly wasted opportunities she fought so hard to give me. Not because I did not care. Not because I was lazy. Not because I lacked desire. But because I was trying to succeed in a colour-coded game while living with a visual problem nobody had identified.
+          </p>
+
+          <p>
+            That creates a pain people do not always see. The player carries the shame. The parent carries the frustration. The family carries the sacrifice. And nobody understands what is really happening.
+          </p>
+
+          <p>
+            I know the regret of finding out late. I know the quiet resentment of wishing someone had spotted it earlier. A coach. A club. A teacher. An adult. Anyone.
+          </p>
+
+          <p>
+            Not because they were bad people. But because they did not know what to look for.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="wrap">
+        <div class="mission-strip">
+          <p class="eyebrow">Why this mission exists</p>
+          <h2>Colour-blind players do not just need awareness. They need understanding, dignity and practical ways to adapt.</h2>
+          <p>
+            Colour blindness is not the end of the world. But when a child is colour blind and nobody knows, nobody explains it, nobody teaches them how to adapt, and nobody reacts with care when they find out, the player can end up hiding the problem instead of getting help.
+          </p>
+        </div>
+
+        <article class="article" style="margin-top: 22px;">
+          <p>
+            This project started because I could not find what I needed when I needed it.
+          </p>
+
+          <p>
+            I wanted answers that were not just medical. I wanted football answers. I wanted someone to explain what colour blindness feels like inside a fast game, how it affects decision-making, why some drills can become confusing, why some kit clashes are harder than people realise, and how a player can adapt without feeling embarrassed.
+          </p>
+
+          <p>
+            I also wanted people to understand that the way they respond matters. If a child says they are colour blind, the answer should not be judgement, pity or lowered expectations. The answer should be curiosity, support and practical adaptation.
+          </p>
+
+          <p>
+            Because the player may already have spent years finding other ways to cope. They may already have developed clever workarounds. They may already be solving problems in ways nobody else has noticed.
+          </p>
+
+          <p>
+            The goal is not to treat colour-blind players as incapable. The goal is to stop forcing them to struggle alone in a game full of colour-coded information.
+          </p>
+
+          <p>
+            Over time, that gap became the reason for the book, the games, the awareness pages, the sponsor mission, the GPT guide and the resources around this project.
+          </p>
+
+          <p>
+            I want the next child to find out earlier. I want the next parent to know what signs to look for. I want the next coach to understand that a player who looks nervous, slow, careless or confused may not lack ability — they may simply be seeing the game differently.
+          </p>
+
+          <p>
+            I do not want another child to spend years thinking they are the problem. I do not want another parent to sacrifice money, time and energy for years, only to discover too late that there was a hidden barrier no one explained.
+          </p>
+
+          <p>
+            I cannot change what happened to me. But I can use it.
+          </p>
+
+          <p>
+            I can turn the frustration, the regret, the wasted years, the anxiety and the pain into something that helps the next player, the next parent, the next coach and the next club.
+          </p>
+
+          <p>
+            This is bigger than a book. This is about awareness. This is about prevention. This is about protecting hidden talent. This is about giving colour-blind footballers the chance to understand themselves before the game breaks their confidence.
+          </p>
+
+          <p>
+            <strong>The goal is simple: make the game visible. Then judge the football.</strong>
+          </p>
+
+          <p>
+            I created this mission because I know what it feels like to be misunderstood. Now I want to make sure the next player is not alone.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="wrap">
+        <div class="section-title">
+          <p class="eyebrow">Support</p>
+          <h2>Two different ways to support</h2>
+          <p class="lead">
+            Sponsoring free books and sending a personal tip are different. I want that to be clear, honest and easy to understand.
+          </p>
+        </div>
+
+        <div class="support-box">
+          <div class="support-card featured">
+            <h3>🏆 Sponsor Free Books</h3>
+            <p>
+              This is for sponsors who want to help fund free copies of Colour Blindness in Football so the message can reach more players, parents, coaches and clubs.
+            </p>
+            <a class="btn btn-primary" href="https://cornelius-aurelius.github.io/Sponsor-the-Hidden-Player/#leaderboard" target="_blank" rel="noopener noreferrer">
+              Sponsor the Hidden Player
+            </a>
+            <div class="note">
+              Sponsor support is connected to the free-book mission and sponsor visibility wall.
+            </div>
+          </div>
+
+          <div class="support-card">
+            <h3>☕ Tip Cornelius</h3>
+            <p>
+              This is a personal tip for Cornelius Aurelius. It is not a book sponsorship or a direct payment to buy free books. It helps support me personally so I can keep building useful projects, tools, resources and awareness work that help others — including, but not limited to, my colour blindness in football mission.
+            </p>
+            <a class="btn btn-secondary" href="https://buy.stripe.com/eVqcMY98h5wo6logZOejK00" target="_blank" rel="noopener noreferrer">
+              Send a Personal Tip
+            </a>
+            <div class="note">
+              Personal support helps me keep going and keep building valuable projects.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Cornelius Aurelius: I Was the Hidden Player</strong><br />
+        Make the game visible. Then judge the football.
+      </div>
+
+      <div>
+        <a href="https://corneliusaurelius.com/" target="_blank" rel="noopener noreferrer">corneliusaurelius.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
