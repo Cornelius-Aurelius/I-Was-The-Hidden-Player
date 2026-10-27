@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {SITUATIONS,LENGTH,MODES,validateSituation,begin,answer,next,rank} from '../assets/hidden-signal-core.mjs';
+test('all 12 source-grounded situations unique and each has one correct answer',()=>{assert.equal(LENGTH,12);assert.equal(new Set(SITUATIONS.map(x=>x.title)).size,12);for(const q of SITUATIONS){assert.equal(validateSituation(q),true);assert.ok(q.choices[q.answer]);}});
+test('two supported modes',()=>{assert.deepEqual(MODES,['matchday','practice']);assert.throws(()=>begin('other'));});
+test('state begins with no points',()=>{let s=begin('matchday');assert.equal(s.phase,'question');assert.equal(s.points,0)});
+test('correct answer earns points and a streak',()=>{let s=answer(begin(),SITUATIONS[0].answer);assert.equal(s.points,100);assert.equal(s.streak,1);assert.equal(s.correct,1);assert.equal(s.phase,'feedback')});
+test('incorrect answer teaches without inventing points',()=>{let s=answer(begin(),(SITUATIONS[0].answer+1)%3);assert.equal(s.points,0);assert.equal(s.mistakes,1);assert.equal(s.correct,0);assert.equal(s.streak,0)});
+test('streak grows with correct answers',()=>{let s=begin();for(let i=0;i<4;i++){s=answer(s,SITUATIONS[i].answer);if(i<3)s=next(s)}assert.equal(s.correct,4);assert.equal(s.streak,4);assert.equal(s.points,100+120+140+160)});
+test('invalid choice or phase refused',()=>{let s=begin();assert.throws(()=>answer(s,4));assert.throws(()=>next(s));let a=answer(s,0);assert.throws(()=>answer(a,0))});
+test('full perfect playthrough reaches correct rank',()=>{let s=begin();for(let i=0;i<LENGTH;i++){assert.equal(s.index,i);s=answer(s,SITUATIONS[i].answer);s=next(s)}assert.equal(s.phase,'complete');assert.equal(s.correct,12);assert.equal(rank(s),'SIGNAL MASTER');assert.equal(s.completed,true)});
+test('practice remains replayable and completes',()=>{let s=begin('practice');for(let i=0;i<LENGTH;i++){s=answer(s,(SITUATIONS[i].answer+1)%3);s=next(s)}assert.equal(s.completed,true);assert.equal(s.mistakes,12);assert.equal(s.points,0);assert.equal(rank(s),'LEARNING THE SIGNALS')});
+test('round advancement stops at final question',()=>{let s=begin();for(let i=0;i<LENGTH;i++){s=answer(s,SITUATIONS[i].answer);s=next(s)}assert.throws(()=>next(s))});
+test('author credit appears in source',async()=>{const fs=await import('node:fs');const txt=fs.readFileSync(new URL('../README.md',import.meta.url),'utf8');assert.match(txt,/Cornelius Aurelius/)});

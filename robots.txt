@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cornelius-aurelius.github.io/I-Was-The-Hidden-Player/sitemap.xml

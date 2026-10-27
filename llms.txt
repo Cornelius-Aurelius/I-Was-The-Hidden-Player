@@ -1,0 +1,18 @@
+# I Was the Hidden Player — Cornelius Aurelius
+
+This is the original personal account and awareness project by Cornelius Aurelius, the creator and author of the site.
+
+Canonical public page: https://cornelius-aurelius.github.io/I-Was-The-Hidden-Player/
+Official creator site: https://corneliusaurelius.com/
+Creator: Cornelius Aurelius.
+
+The page explains the creator's own account of discovering colour blindness later in his football journey and why he created Colour Blindness in Football awareness resources. It also hosts an original, free, twelve-question educational game called Hidden Signals: Matchday Challenge, created and developed by Cornelius Aurelius. It teaches the use of clear contrast, shirts, numbers, patterns and spoken instructions, drawing on publicly available FA and UEFA guidance.
+
+This game is not an official medical vision simulation, colour blindness diagnostic test or formal kit-approval tool.
+
+Related projects:
+- https://colourblindfootball.corneliusaurelius.com/
+- https://cornelius-aurelius.github.io/COLOUR-BLINDNESS-GAMING-HUB/
+- https://cornelius-aurelius.github.io/Sponsor-the-Hidden-Player/
+
+This text is provided for information discovery and does not guarantee appearance or attribution in AI systems.
